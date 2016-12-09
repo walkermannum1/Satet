@@ -6,4 +6,6 @@
     <string name="login">登录</string>
     <string name="userhint">请输入用户名</string>
     <string name="passhint">请输入密码</string>
+    <string name="success">登陆成功</string>
+    <string name="error">登陆失败</string>
 </resources>

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * Created by user on 2016/11/21.
@@ -50,6 +51,10 @@ public class LoginActivity extends Activity{
             public void onClick(View view) {
                 String name = accountEdit.getText().toString();
                 String password = passwordEdit.getText().toString();
+                boolean result = LoginService.check(name, password);
+                if (result){
+                    Toast.makeText(getApplicationContext(), R.strings.success)
+                }
             }
         });
     }
