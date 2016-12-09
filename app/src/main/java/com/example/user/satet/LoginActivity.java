@@ -53,7 +53,9 @@ public class LoginActivity extends Activity{
                 String password = passwordEdit.getText().toString();
                 boolean result = LoginService.check(name, password);
                 if (result){
-                    Toast.makeText(getApplicationContext(), R.strings.success)
+                    Toast.makeText(getApplicationContext(), R.string.success, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), R.string.fail, Toast.LENGTH_SHORT).show();
                 }
             }
         });
