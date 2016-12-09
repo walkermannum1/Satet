@@ -48,7 +48,8 @@ public class LoginActivity extends Activity{
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String name = accountEdit.getText().toString();
+                String password = passwordEdit.getText().toString();
             }
         });
     }
