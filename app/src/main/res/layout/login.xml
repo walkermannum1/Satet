@@ -42,7 +42,6 @@
         android:layout_height="match_parent">
 
         <CheckBox
-            android:text="CheckBox"
             android:layout_height="wrap_content"
             android:id="@+id/remember_pass"/>
 
