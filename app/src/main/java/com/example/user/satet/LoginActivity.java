@@ -1,6 +1,7 @@
 package com.example.user.satet;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -53,6 +54,18 @@ public class LoginActivity extends Activity{
                 String password = passwordEdit.getText().toString();
                 boolean result = LoginService.check(name, password);
                 if (result){
+                    editor = pref.edit();
+                    if (remembPass.isChecked()) {
+                        editor.putBoolean("remember_password", true);
+                        editor.putString("account", name);
+                        editor.putString("password", password);
+                    } else {
+                        editor.clear();
+                    }
+                    editor.commit();
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
                     Toast.makeText(getApplicationContext(), R.string.success, Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.fail, Toast.LENGTH_SHORT).show();

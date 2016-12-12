@@ -16,7 +16,7 @@ import java.util.Set;
  * Created by Guang on 2016/12/9.
  */
 
-public class LoginService {
+public class LoginService implements Runnable {
     public static boolean check(String name, String password) {
         String path = "http://116.236.224.54:21219/TestTaskManagerDemo/Login";
         Map<String,String> user = new HashMap<String, String>();
@@ -49,5 +49,10 @@ public class LoginService {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public void run() {
+
     }
 }
